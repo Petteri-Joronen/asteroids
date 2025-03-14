@@ -4,6 +4,7 @@ from player import *
 from constants import *
 from astereoid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
 
 def main():
     pygame.init()
@@ -36,6 +37,10 @@ def main():
         for piirra in drawable:            
             piirra.draw(screen)
         updatable.update(dt)
+        for collision in asteroids:
+            if collision.collision(pelajaa) == True:
+                print("Game over!")
+                exit()
         pygame.display.flip()
         dt=clock.tick(60)/1000
         
