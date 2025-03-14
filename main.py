@@ -14,10 +14,12 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
-   
+    bullet = pygame.sprite.Group()
+    
     Player.containers = (drawable, updatable)
     Asteroid.containers=(asteroids,drawable,updatable)
     AsteroidField.containers=(updatable)
+    Shot.containers = (bullet,updatable,drawable )
     
     kivi_kentta= AsteroidField()
     pelajaa=Player(SCREEN_WIDTH / 2,SCREEN_HEIGHT / 2)
