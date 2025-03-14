@@ -39,6 +39,11 @@ def main():
         for piirra in drawable:            
             piirra.draw(screen)
         updatable.update(dt)
+        for kivi in asteroids:
+            for rauta in bullet:
+                if kivi.collision(rauta)== True:
+                    kivi.kill()
+                    rauta.kill()
         for collision in asteroids:
             if collision.collision(pelajaa) == True:
                 print("Game over!")
