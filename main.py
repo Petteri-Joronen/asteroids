@@ -42,8 +42,8 @@ def main():
         for kivi in asteroids:
             for rauta in bullet:
                 if kivi.collision(rauta)== True:
-                    kivi.kill()
                     rauta.kill()
+                    kivi.split()
         for collision in asteroids:
             if collision.collision(pelajaa) == True:
                 print("Game over!")
